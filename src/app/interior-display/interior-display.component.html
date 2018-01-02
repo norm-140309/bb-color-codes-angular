@@ -1,0 +1,21 @@
+<mat-card *ngIf="!edit">
+  <mat-card-content>
+      <p><label>code:</label> {{myData.code}} </p>
+    <p><label>color_id:</label> {{myData.color_id}} </p>
+    <p><label>color_label:</label> {{myData.color_label}} </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" class="mat-small" (click)="edit=!edit" >Edit</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="edit">
+  <mat-card-content>
+    <p><label>code:</label> <input [(ngModel)]="myData.code" /> </p>
+    <p><label>color_id:</label> <input [(ngModel)]="myData.color_id" /> </p>
+    <p><label>color_label:</label> <input [(ngModel)]="myData.color_label" /> </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" class="mat-small" (click)="updateItem(myData);edit=!edit" >Save</button>
+  </mat-card-actions>
+</mat-card>

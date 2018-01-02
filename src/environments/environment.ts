@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBNmJmsSW_3OK8i_QFR13vU_DQNH6MIKZg',
+    authDomain: 'blackbird-colorcodes-7172e.firebaseapp.com',
+    databaseURL: 'https://blackbird-colorcodes-7172e.firebaseio.com',
+    projectId: 'blackbird-colorcodes-7172e',
+    storageBucket: 'blackbird-colorcodes-7172e.appspot.com',
+    messagingSenderId: '41670104781'
+  }
 };

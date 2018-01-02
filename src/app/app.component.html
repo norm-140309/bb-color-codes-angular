@@ -36,6 +36,32 @@
   </mat-card-actions>
 </mat-card>
 
+<mat-card *ngIf="mode=='interior'" class="card-container" >
+    <mat-card-header>
+      <mat-card-title>Create New Interior Color Code</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-form-field><input matInput placeholder="modelID" [(ngModel)]="intData.modelID"></mat-form-field>
+      </p>
+      <p>
+        <mat-form-field><input matInput placeholder="interiorCode" [(ngModel)]="intData.interiorCode"></mat-form-field>
+      </p>
+      <p>
+        <mat-form-field><input matInput placeholder="interiorColor" [(ngModel)]="intData.interiorColor"></mat-form-field>
+      </p>
+      <p>
+        <mat-form-field><input matInput placeholder="trimColor" [(ngModel)]="intData.trimColor"></mat-form-field>
+      </p>
+      <p>
+        <mat-form-field><input matInput placeholder="trimID" [(ngModel)]="intData.trimID"></mat-form-field>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addInternalItem(intData)" >Save</button>
+    </mat-card-actions>
+  </mat-card>
+
 <div class="card-container" *ngFor="let item of dspData;let i = index;">
     <p *ngIf="mode!='exterior' && mode!='interior'">{{ item | json }}</p>
     <app-exterior-display [myData]="item" [myID]="i"  *ngIf="mode=='exterior'"></app-exterior-display>

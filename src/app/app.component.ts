@@ -17,6 +17,7 @@ export class AppComponent {
   mode: string;
   dspData: any[];
   extData: object = { code: '', color_id: '', color_label: '' };
+  intData: object = { interiorCode: '', interiorColor: '', modelID: '', trimColor: '', trimID: '' };
 
   hasProp(d, prop) {
     return _.filter(d, function(d){
@@ -49,6 +50,12 @@ export class AppComponent {
     console.log('Update Item:', obj);
     this.codesService.addExternalItem(obj);
     this.extData = { code: '', color_id: '', color_label: '' };
+  }
+
+  addInternalItem(obj) {
+    console.log('Update Item:', obj);
+    this.codesService.addInternalItem(obj);
+    this.intData = { interiorCode: '', interiorColor: '', modelID: '', trimColor: '', trimID: '' };
   }
 
   constructor(db: AngularFireDatabase, private codesService: CodesService) {

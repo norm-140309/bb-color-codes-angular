@@ -28,7 +28,9 @@ export class CodesService {
       updateRef.update({
         interiorCode: data.interiorCode,
         interiorColor: data.interiorColor,
-        modelID: data.modelID
+        modelID: data.modelID,
+        trimColor: data.trimColor,
+        trimID: data.trimID
       });
     });
   }
@@ -44,6 +46,18 @@ export class CodesService {
       code: data.code,
       color_id: data.color_id,
       color_label: data.color_label
+    });
+  }
+
+  addInternalItem(data: any) {
+    const codesRef = firebase.database().ref('color_code_key');
+    codesRef.push({
+      _id: this.randomID(),
+      interiorCode: data.interiorCode,
+      interiorColor: data.interiorColor,
+      modelID: data.modelID,
+      trimColor: data.trimColor,
+      trimID: data.trimID
     });
   }
 

@@ -20,6 +20,19 @@ export class CodesService {
     });
   }
 
+  updateInterior(data: any) {
+    const codesRef = firebase.database().ref('color_code_key');
+    const match = codesRef.orderByChild('_id').equalTo(data._id).on('child_added', function(qData) {
+      // console.log('key for ' + data._id, qData.key);
+      const updateRef = firebase.database().ref('color_code_key/' + qData.key);
+      updateRef.update({
+        interiorCode: data.interiorCode,
+        interiorColor: data.interiorColor,
+        modelID: data.modelID
+      });
+    });
+  }
+
   randomID() {
     return new Array(24).join().replace(/(.|$)/g, function(){return ((Math.random()*36)|0).toString(36);})
   }

@@ -37,7 +37,7 @@
 </mat-card>
 
 <div class="card-container" *ngFor="let item of dspData;let i = index;">
-    <p *ngIf="mode!='exterior'">{{ item | json }}</p>
+    <p *ngIf="mode!='exterior' && mode!='interior'">{{ item | json }}</p>
     <app-exterior-display [myData]="item" [myID]="i"  *ngIf="mode=='exterior'"></app-exterior-display>
     <app-interior-display [myData]="item" [myID]="i"  *ngIf="mode=='interior'"></app-interior-display> 
 </div>

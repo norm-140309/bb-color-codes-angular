@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mat-small {
+  line-height: 1.5em !important;
+  min-width: auto !important;
+  padding: 0 8px !important;
+}
+
+.mat-card-header-text { margin: 0 !important; }
+
+.mat-card-title {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+.mat-card-actions {
+  margin: 0 !important;
+}
+
+.card-container {
+  margin: 15px;
+}
+
+app-exterior-display, app-interior-display {
+  min-height: 185px;
+  width: 300px; 
+  float: left;
+  margin: 10px;
+}

@@ -1,8 +1,8 @@
 <mat-card *ngIf="!edit">
   <mat-card-content>
-      <p><label>code:</label> {{myData.code}} </p>
-    <p><label>color_id:</label> {{myData.color_id}} </p>
-    <p><label>color_label:</label> {{myData.color_label}} </p>
+      <p><label>interiorCode:</label> {{myData.interiorCode}} </p>
+    <p><label>interiorColor:</label> {{myData.interiorColor}} </p>
+    <p><label>modelID:</label> {{myData.modelID}} </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary" class="mat-small" (click)="edit=!edit" >Edit</button>
@@ -11,9 +11,9 @@
 
 <mat-card *ngIf="edit">
   <mat-card-content>
-    <p><label>code:</label> <input [(ngModel)]="myData.code" /> </p>
-    <p><label>color_id:</label> <input [(ngModel)]="myData.color_id" /> </p>
-    <p><label>color_label:</label> <input [(ngModel)]="myData.color_label" /> </p>
+    <p><label>interiorCode:</label> <input [(ngModel)]="myData.interiorCode" /> </p>
+    <p><label>interiorColor:</label> <input [(ngModel)]="myData.interiorColor" /> </p>
+    <p><label>modelID:</label> <input [(ngModel)]="myData.modelID" /> </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="accent" class="mat-small" (click)="updateItem(myData);edit=!edit" >Save</button>

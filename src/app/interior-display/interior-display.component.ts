@@ -13,7 +13,7 @@ export class InteriorDisplayComponent implements OnInit {
 
   updateItem(obj) {
     console.log('Update Item:', obj);
-    this.codesService.update(obj);
+    this.codesService.updateInterior(obj);
   }
   
   constructor(private codesService: CodesService) {
